@@ -1,0 +1,3 @@
+first:
+  username: vasile
+  password_digest: <%= digest('secret') %>
