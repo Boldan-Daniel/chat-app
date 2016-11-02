@@ -1,0 +1,16 @@
+<div class="dialog">
+  <%= form_for(:session, url: login_url) do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit 'Log in' %>
+  <% end %>
+
+  <ul class="session-links">
+    <li>New user?</li>
+    <li><%= link_to 'Sign up', new_user_url %></li>
+  </ul>
+</div>

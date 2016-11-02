@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'messages#index'
 
-  resources :users
-  resources :messages
+  resources :users, only: [:new, :create]
+  resources :messages, only: [:index, :create]
 
   get    '/login',  to: 'sessions#new'
   post   '/login',  to: 'sessions#create'

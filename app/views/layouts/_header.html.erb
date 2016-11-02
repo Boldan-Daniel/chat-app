@@ -1,0 +1,6 @@
+<header class="header">
+  <%= link_to (render 'layouts/logo'), root_url, class: 'header-logo' %>
+  <%= content_tag 'ul', class: 'header-nav' do %>
+    <%= content_tag('li', link_to('Sign out', logout_url, method: :delete)) if user_logged_in? %>
+  <% end %>
+</header>
