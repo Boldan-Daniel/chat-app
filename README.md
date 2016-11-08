@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+CHAT APP is build on RAILS 5 framework. It's simply show how to use ActionCable in real world.
 
 * Ruby version
-
+  - 2.3.1
+  
 * System dependencies
-
+  - puma
+  - turbolinks
+  - coffe-rails
+  - jquery-rails
+  - kramdown
+  - bundler
+ 
 * Configuration
-
+  - set up your ruby environment and after install rails and bundler
+  - last step type: bundle install
+  
 * Database creation
+  - after configuring run next command:
+    1. rails db:create  
 
 * Database initialization
-
+  - after database creation you must fill the tables:
+     1. rails db:migrate
+     2. rails db:seed
+     
 * How to run the test suite
+  - it's used minitest 
+  - run: rails test
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Play with it and learn more about ActionCable and WebSocket
