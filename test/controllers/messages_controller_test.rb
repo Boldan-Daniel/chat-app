@@ -13,6 +13,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
 
   test 'index' do
     login_as @user
+
     get messages_url
     assert_response :success
   end
@@ -21,25 +22,28 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Message.count' do
       post messages_url, params: { message: { content: 'some content' } }
     end
+
     assert_redirected_to login_url
   end
 
   test 'create should require content' do
     login_as @user
+
     assert_no_difference 'Message.count' do
       post messages_url, params: { message: { content: '' } }
     end
 
-    assert_template 'index'
+    assert_response :success
   end
 
   test 'create message' do
     login_as @user
+
     assert_difference 'Message.count', 1 do
       post messages_url, params: { message: { content: 'some content' } }
     end
 
-    assert_redirected_to messages_url
+    assert_response :success
   end
 
 end
